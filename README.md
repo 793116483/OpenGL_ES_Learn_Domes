@@ -1,11 +1,13 @@
 # OpenGL ES 学习代码笔记
 
-## 学习博客 ：https://www.jianshu.com/nb/2135411
+#### 学习博客 ：https://www.jianshu.com/nb/2135411
 
-## 该博主的git代码仓库：https://github.com/loyinglin/LearnOpenGLES
+#### 该博主的git代码仓库：https://github.com/loyinglin/LearnOpenGLES
+
+#### OpenGL ES 函数及参数解释：https://www.khronos.org/registry/OpenGL-Refpages/es2.0/xhtml/
 
 
-### CPU 与 GPU 工作原理大致过程
+## CPU 与 GPU 工作原理大致过程
 
 #### UIBezierPath 、Core Graphics == Quartz 2D 、OpenGL
 

@@ -103,6 +103,7 @@
 		F2EBF50E23CEF2A300C6B8DF /* OpenGL_ES绘图Dome */ = {
 			isa = PBXGroup;
 			children = (
+				F2EBF54723CF236200C6B8DF /* 01-显示一张图片 */,
 				F2EBF50F23CEF2A300C6B8DF /* AppDelegate.h */,
 				F2EBF51023CEF2A300C6B8DF /* AppDelegate.m */,
 				F2EBF51523CEF2A300C6B8DF /* ViewController.h */,
@@ -133,6 +134,13 @@
 				F2EBF53B23CEF2A500C6B8DF /* Info.plist */,
 			);
 			path = "OpenGL_ES绘图DomeUITests";
+			sourceTree = "<group>";
+		};
+		F2EBF54723CF236200C6B8DF /* 01-显示一张图片 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "01-显示一张图片";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
