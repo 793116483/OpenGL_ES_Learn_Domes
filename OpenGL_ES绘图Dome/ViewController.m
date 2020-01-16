@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "QJImageView.h"
 
 @interface ViewController ()
 
@@ -17,12 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-}
-
--(void)openGLES {
-    
     
 }
 
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    
+    QJImageView * imageView = [[QJImageView alloc] init];
+    imageView.backgroundColor = [UIColor redColor];
+    imageView.image = [UIImage imageNamed:@"image0.png"];
+    imageView.frame = [UIScreen mainScreen].bounds;
+    
+    [self.view addSubview:imageView];
+}
 
 @end

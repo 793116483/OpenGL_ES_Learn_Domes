@@ -16,6 +16,8 @@
 		F2EBF52523CEF2A500C6B8DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBF52423CEF2A500C6B8DF /* main.m */; };
 		F2EBF52F23CEF2A500C6B8DF /* OpenGL_ES__DomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBF52E23CEF2A500C6B8DF /* OpenGL_ES__DomeTests.m */; };
 		F2EBF53A23CEF2A500C6B8DF /* OpenGL_ES__DomeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBF53923CEF2A500C6B8DF /* OpenGL_ES__DomeUITests.m */; };
+		F2EBF54A23CF263F00C6B8DF /* QJImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBF54923CF263F00C6B8DF /* QJImageView.m */; };
+		F2EBF54C23CF4CFB00C6B8DF /* image0.png in Resources */ = {isa = PBXBuildFile; fileRef = F2EBF54B23CF4CFA00C6B8DF /* image0.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		F2EBF53523CEF2A500C6B8DF /* OpenGL_ES绘图DomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OpenGL_ES绘图DomeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EBF53923CEF2A500C6B8DF /* OpenGL_ES__DomeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGL_ES__DomeUITests.m; sourceTree = "<group>"; };
 		F2EBF53B23CEF2A500C6B8DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2EBF54823CF263F00C6B8DF /* QJImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QJImageView.h; sourceTree = "<group>"; };
+		F2EBF54923CF263F00C6B8DF /* QJImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QJImageView.m; sourceTree = "<group>"; };
+		F2EBF54B23CF4CFA00C6B8DF /* image0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image0.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,9 @@
 		F2EBF54723CF236200C6B8DF /* 01-显示一张图片 */ = {
 			isa = PBXGroup;
 			children = (
+				F2EBF54B23CF4CFA00C6B8DF /* image0.png */,
+				F2EBF54823CF263F00C6B8DF /* QJImageView.h */,
+				F2EBF54923CF263F00C6B8DF /* QJImageView.m */,
 			);
 			path = "01-显示一张图片";
 			sourceTree = "<group>";
@@ -249,6 +257,7 @@
 				F2EBF52223CEF2A500C6B8DF /* LaunchScreen.storyboard in Resources */,
 				F2EBF51F23CEF2A500C6B8DF /* Assets.xcassets in Resources */,
 				F2EBF51A23CEF2A300C6B8DF /* Main.storyboard in Resources */,
+				F2EBF54C23CF4CFB00C6B8DF /* image0.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EBF54A23CF263F00C6B8DF /* QJImageView.m in Sources */,
 				F2EBF52523CEF2A500C6B8DF /* main.m in Sources */,
 				F2EBF51723CEF2A300C6B8DF /* ViewController.m in Sources */,
 				F2EBF51123CEF2A300C6B8DF /* AppDelegate.m in Sources */,
@@ -448,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46S98ZE7K8;
 				INFOPLIST_FILE = "OpenGL_ES绘图Dome/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,6 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 46S98ZE7K8;
 				INFOPLIST_FILE = "OpenGL_ES绘图Dome/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
