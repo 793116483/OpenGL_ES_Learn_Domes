@@ -80,7 +80,7 @@
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, (GLfloat *)NULL + 0);
     
     /**
-        【纹理化 功能】：得到 图片纹理的 位置 与 颜色数据 (颜色值 ，与 深度) 等
+        【纹理化 功能】：1.纹理帖图；2.颜色化 : 得到 图片纹理的 颜色数据 (颜色值 ，与 深度) 等
       
         @parameter GLKTextureLoaderOriginBottomLeft 纹理坐标系是以Bottom Left为原点
      
