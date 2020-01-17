@@ -45,7 +45,33 @@
     // modelviewMatrix 的起始值必为 GLKMatrix4Translate(GLKMatrix4Identity, 0.0f, 0.0f, -2.0f)
     GLKMatrix4 start_modelviewMatrix = GLKMatrix4Translate(GLKMatrix4Identity, 0.0f, 0.0f, -2.0f) ;
     float radians = GLKMathDegreesToRadians(15.0) ; // 绕(1,1,1)向量轴 旋转15度
-    self.myEffect.transform.modelviewMatrix = GLKMatrix4Rotate(start_modelviewMatrix , radians, 1, 1, 1);
+    self.myEffect.transform.modelviewMatrix = start_modelviewMatrix ;//GLKMatrix4Rotate(start_modelviewMatrix , radians, 1, 1, 1);
+    
+    
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    float radians = GLKMathDegreesToRadians(15.0) ; // 绕(1,1,1)向量轴 旋转15度
+    GLKMatrix4 start_modelviewMatrix = GLKMatrix4Translate(GLKMatrix4Identity, 0.0f, 0.0f, -2.0f) ;
+
+    // 2. 定时器
+    double delayInSeconds = 0.1;
+    static dispatch_source_t timer ;
+    
+    if (timer == NULL) {
+        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+    } else {
+        return ;
+    }
+    
+    static CGFloat flag = 0.1 ;
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC, 0.0);
+    dispatch_source_set_event_handler(timer, ^{
+        flag += 0.1 ;
+        self.myEffect.transform.modelviewMatrix = GLKMatrix4Rotate(start_modelviewMatrix , radians * flag, 1, 1, 1);
+        [self setNeedsDisplay];
+    });
+    dispatch_resume(timer);
 }
 
 #pragma mark - view 与 图片 自身的 四个顶点 组成 两个三角形 的 顶点数据
