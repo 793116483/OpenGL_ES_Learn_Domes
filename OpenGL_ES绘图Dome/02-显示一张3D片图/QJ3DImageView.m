@@ -45,7 +45,7 @@
     // modelviewMatrix 的起始值必为 GLKMatrix4Translate(GLKMatrix4Identity, 0.0f, 0.0f, -2.0f)
     GLKMatrix4 start_modelviewMatrix = GLKMatrix4Translate(GLKMatrix4Identity, 0.0f, 0.0f, -2.0f) ;
     float radians = GLKMathDegreesToRadians(15.0) ; // 绕(1,1,1)向量轴 旋转15度
-    self.myEffect.transform.modelviewMatrix = start_modelviewMatrix ;//GLKMatrix4Rotate(start_modelviewMatrix , radians, 1, 1, 1);
+    self.myEffect.transform.modelviewMatrix = GLKMatrix4Rotate(start_modelviewMatrix , radians, 1, 1, 1);
     
     
 }
@@ -64,7 +64,7 @@
         return ;
     }
     
-    static CGFloat flag = 0.1 ;
+    static CGFloat flag = 0.9 ;
     dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC, 0.0);
     dispatch_source_set_event_handler(timer, ^{
         flag += 0.1 ;
