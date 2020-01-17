@@ -54,10 +54,12 @@
      */
     GLfloat squareVertexAttributes[] =
     {
+        // 第一个 三角形
         0.9f, -0.9f, 0.0f,    1.0f, 0.0f, //右下
         0.9f, 0.9f, -0.0f,    1.0f, 1.0f, //右上
         -0.9f, 0.9f, 0.0f,    0.0f, 1.0f, //左上
         
+        // 第二个 三角形
         0.9f, -0.9f, 0.0f,    1.0f, 0.0f, //右下
         -0.9f, 0.9f, 0.0f,    0.0f, 1.0f, //左上
         -0.9f, -0.9f, 0.0f,   0.0f, 0.0f, //左下
@@ -72,12 +74,12 @@
     
     // 告诉 GPU 绘图时，获取 缓存中的 顶点坐标 在缓存中的 开始位置 和 格式
     glEnableVertexAttribArray(GLKVertexAttribPosition);
-    // 获取方式（3：顶点是3D位置 、GL_FLOAT：顶点的数据类型，GL_FALSE：顶点坐标不需要转平面坐标(因为已经是平面坐标) 、sizeof(GLfloat)*5 ：表示一个顶点的大小 、(GLfloat *)NULL + 0 ：在数组中取顶点的初始位置下标）
+    // 获取方式（3：顶点是3D位置 、GL_FLOAT：顶点的数据类型，GL_FALSE：顶点坐标不需要转平面坐标(因为已经是平面坐标) 、sizeof(GLfloat)*5 ：表示一个顶点的大小 、(GLfloat *)NULL + 0 ：在一个顶点数据中取纹理坐标的起始位置下标）
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, (GLfloat *)NULL + 0);
     
     // 告诉 GPU 图片 纹理坐标 获取方式
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
-    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, (GLfloat *)NULL + 0);
+    glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat)*5, (GLfloat *)NULL + 3);
     
     /**
         【纹理化 功能】：1.纹理帖图；2.颜色化 : 得到 图片纹理的 颜色数据 (颜色值 ，与 深度) 等
