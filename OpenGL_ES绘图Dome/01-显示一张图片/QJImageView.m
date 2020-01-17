@@ -9,7 +9,6 @@
 #import "QJImageView.h"
 
 #import "QJDrawTrianglesModel.h"
-#import "QJVertexAttribute.h"
 
 @interface QJImageView ()
 
@@ -70,6 +69,8 @@
         NSLog(@"邦定上下文失败");
         return NO ;
     }
+    
+    // 可以颜色深度测试
     glEnable(GL_DEPTH_TEST);
    
     // 3. 把三角形顶点数组 拷贝到 GPU 的缓存中
@@ -184,15 +185,17 @@
  * 注意：如果没有实现 drawRect: 方法，self 就需要实现 self.delegate 的代码方法 才能在指定的上下文 绘图
 */
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect {
-    // 设置上下文的背景
-    glClearColor(1.0f, 0.0f, 0.0f, 1.0);
-    // 应用设置的 颜色 和 颜色深度(DEPTH = alpha)
+    
+    // 0.设置上下文的背景【只能在这里设置颜色】
+    glClearColor(self.blankColor.red, self.blankColor.green, self.blankColor.blue, self.blankColor.alpha);
+    
+    // 1. 应用设置的 颜色 和 颜色深度(DEPTH = alpha)【必添 加这句才能显示图片】
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
-    // 启动着色器 准备画图
+    // 2. 启动着色器 准备画图
     [self.myEffect prepareToDraw];
     
-    // 把顶点数组 分成 两个三角形 方式 在上下文内 画图
+    // 3. 把顶点数组 分成 两个三角形 方式 在上下文内 画图
     glDrawArrays(GL_TRIANGLES, 0, self.nCount) ;
     
 }
@@ -221,7 +224,7 @@
     if (!_triaglesAttributeArray) {
         
         QJVertexAttribColor color0 = {0.0f, 0.0f, 0.5f , 1.0} ;
-        QJVertexAttribPosition position0 = {-1,1,0};
+        QJVertexAttribPosition position0 = {-1.0,1,0};
         QJVertexAttribTexcoord texcoord0 = {0,1};
         QJVertexAttribute * vertexAttribute0 = [QJVertexAttribute vertexAttributeWithPosition:position0 texcoord:texcoord0 color:color0] ;
         

@@ -9,15 +9,19 @@
 #import <GLKit/GLKit.h>
 #import <UIKit/UIKit.h>
 
+#import "QJVertexAttribute.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @class QJDrawTrianglesModel ;
 
 @interface QJImageView : GLKView<GLKViewDelegate>
 
-
 /// 着色器
 @property (nonatomic , readonly) GLKBaseEffect * myEffect ;
+
+/// 空白处的填充颜色,相当于背景色
+@property (nonatomic) QJVertexAttribColor blankColor ;
 
 /// 需要绘制的图形
 @property (nonatomic , strong) UIImage * image ;
