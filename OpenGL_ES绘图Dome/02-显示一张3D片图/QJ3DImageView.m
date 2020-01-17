@@ -47,10 +47,12 @@
     float radians = GLKMathDegreesToRadians(15.0) ; // 绕(1,1,1)向量轴 旋转15度
     self.myEffect.transform.modelviewMatrix = GLKMatrix4Rotate(start_modelviewMatrix , radians, 1, 1, 1);
     
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self startTimer];
+    });
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+-(void)startTimer {
     float radians = GLKMathDegreesToRadians(15.0) ; // 绕(1,1,1)向量轴 旋转15度
     GLKMatrix4 start_modelviewMatrix = GLKMatrix4Translate(GLKMatrix4Identity, 0.0f, 0.0f, -2.0f) ;
 
