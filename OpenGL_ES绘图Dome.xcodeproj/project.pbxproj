@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F26301F923D18A6600730749 /* for_test.png in Resources */ = {isa = PBXBuildFile; fileRef = F26301F823D18A6600730749 /* for_test.png */; };
+		F26301FC23D18A9000730749 /* QJ3DImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F26301FB23D18A9000730749 /* QJ3DImageView.m */; };
+		F26301FF23D18F5300730749 /* QJVertexAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = F26301FE23D18F5300730749 /* QJVertexAttribute.m */; };
+		F263020223D1AD5A00730749 /* QJDrawTrianglesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F263020123D1AD5A00730749 /* QJDrawTrianglesModel.m */; };
 		F2EBF51123CEF2A300C6B8DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBF51023CEF2A300C6B8DF /* AppDelegate.m */; };
 		F2EBF51723CEF2A300C6B8DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EBF51623CEF2A300C6B8DF /* ViewController.m */; };
 		F2EBF51A23CEF2A300C6B8DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2EBF51823CEF2A300C6B8DF /* Main.storyboard */; };
@@ -38,6 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F26301F823D18A6600730749 /* for_test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = for_test.png; sourceTree = "<group>"; };
+		F26301FA23D18A9000730749 /* QJ3DImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QJ3DImageView.h; sourceTree = "<group>"; };
+		F26301FB23D18A9000730749 /* QJ3DImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QJ3DImageView.m; sourceTree = "<group>"; };
+		F26301FD23D18F5300730749 /* QJVertexAttribute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QJVertexAttribute.h; sourceTree = "<group>"; };
+		F26301FE23D18F5300730749 /* QJVertexAttribute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QJVertexAttribute.m; sourceTree = "<group>"; };
+		F263020023D1AD5A00730749 /* QJDrawTrianglesModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QJDrawTrianglesModel.h; sourceTree = "<group>"; };
+		F263020123D1AD5A00730749 /* QJDrawTrianglesModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QJDrawTrianglesModel.m; sourceTree = "<group>"; };
 		F2EBF50C23CEF2A300C6B8DF /* OpenGL_ES绘图Dome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenGL_ES绘图Dome.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2EBF50F23CEF2A300C6B8DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F2EBF51023CEF2A300C6B8DF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +96,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F26301F723D18A3E00730749 /* 02-显示一张3D片图 */ = {
+			isa = PBXGroup;
+			children = (
+				F26301F823D18A6600730749 /* for_test.png */,
+				F26301FA23D18A9000730749 /* QJ3DImageView.h */,
+				F26301FB23D18A9000730749 /* QJ3DImageView.m */,
+			);
+			path = "02-显示一张3D片图";
+			sourceTree = "<group>";
+		};
 		F2EBF50323CEF2A300C6B8DF = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +129,7 @@
 		F2EBF50E23CEF2A300C6B8DF /* OpenGL_ES绘图Dome */ = {
 			isa = PBXGroup;
 			children = (
+				F26301F723D18A3E00730749 /* 02-显示一张3D片图 */,
 				F2EBF54723CF236200C6B8DF /* 01-显示一张图片 */,
 				F2EBF50F23CEF2A300C6B8DF /* AppDelegate.h */,
 				F2EBF51023CEF2A300C6B8DF /* AppDelegate.m */,
@@ -147,6 +169,10 @@
 				F2EBF54B23CF4CFA00C6B8DF /* image0.png */,
 				F2EBF54823CF263F00C6B8DF /* QJImageView.h */,
 				F2EBF54923CF263F00C6B8DF /* QJImageView.m */,
+				F263020023D1AD5A00730749 /* QJDrawTrianglesModel.h */,
+				F263020123D1AD5A00730749 /* QJDrawTrianglesModel.m */,
+				F26301FD23D18F5300730749 /* QJVertexAttribute.h */,
+				F26301FE23D18F5300730749 /* QJVertexAttribute.m */,
 			);
 			path = "01-显示一张图片";
 			sourceTree = "<group>";
@@ -255,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EBF52223CEF2A500C6B8DF /* LaunchScreen.storyboard in Resources */,
+				F26301F923D18A6600730749 /* for_test.png in Resources */,
 				F2EBF51F23CEF2A500C6B8DF /* Assets.xcassets in Resources */,
 				F2EBF51A23CEF2A300C6B8DF /* Main.storyboard in Resources */,
 				F2EBF54C23CF4CFB00C6B8DF /* image0.png in Resources */,
@@ -282,8 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F26301FF23D18F5300730749 /* QJVertexAttribute.m in Sources */,
+				F26301FC23D18A9000730749 /* QJ3DImageView.m in Sources */,
 				F2EBF54A23CF263F00C6B8DF /* QJImageView.m in Sources */,
 				F2EBF52523CEF2A500C6B8DF /* main.m in Sources */,
+				F263020223D1AD5A00730749 /* QJDrawTrianglesModel.m in Sources */,
 				F2EBF51723CEF2A300C6B8DF /* ViewController.m in Sources */,
 				F2EBF51123CEF2A300C6B8DF /* AppDelegate.m in Sources */,
 				F2EBF51D23CEF2A300C6B8DF /* OpenGL_ES__Dome.xcdatamodeld in Sources */,
