@@ -28,6 +28,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable NSArray<QJVertexAttribute *> *) vertexArray ;
 
+
+
+/// 判断 当前三角形模型 是不是 一个三角形
+- (BOOL)isTriangles ;
+
+/// 判断两个三角形 是不是 同一个三角形 【PS：顶点坐标相同,则视为同一个三角形，否则视为不同】
+/// @param triangles 三角形模型
+- (BOOL)isSameTo:(QJDrawTrianglesModel *)triangles ;
+
 @end
 
 NS_ASSUME_NONNULL_END

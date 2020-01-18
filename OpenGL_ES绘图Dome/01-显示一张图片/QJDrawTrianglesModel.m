@@ -7,6 +7,7 @@
 //
 
 #import "QJDrawTrianglesModel.h"
+#import "QJVertexAttribute.h"
 
 @implementation QJDrawTrianglesModel
 
@@ -33,6 +34,35 @@
     return [vertexArray copy];
 }
 
+-(BOOL)isTriangles {
+    if (self.vertex0 == nil || self.vertex1 == nil || self.vertex2 == nil) {
+        return NO ;
+    }
+    if ([self.vertex0 isSameTo:self.vertex1] ||
+        [self.vertex0 isSameTo:self.vertex2] ||
+        [self.vertex1 isSameTo:self.vertex2]) {
+        return NO ;
+    }
+    return YES ;
+}
+
+-(BOOL)isSameTo:(QJDrawTrianglesModel *)triangles {
+    if (triangles == nil) return NO ;
+    if (self == triangles) return YES ;
+    
+    int count = 0 ;
+    NSMutableArray * otherVertexs = [NSMutableArray arrayWithArray:[triangles vertexArray]];
+    for (QJVertexAttribute * aVertex in [self vertexArray]) {
+        for (QJVertexAttribute * aOhterVertex in otherVertexs) {
+            if ([aVertex isSameTo:aOhterVertex]) {
+                [otherVertexs removeObject:aOhterVertex];
+                ++count ;
+                break ;
+            }
+        }
+    }
+    return count == 3 ;
+}
 
 
 @end

@@ -63,6 +63,10 @@ typedef struct QJVertexAttribColor QJVertexAttribColor;
 +(instancetype) vertexAttributeWithPosition:(QJVertexAttribPosition)position texcoord:(QJVertexAttribTexcoord)texcoord color:(QJVertexAttribColor)color ;
 
 
+/// 两个顶点坐标否是相同【PS：self.position == aVertexAttribute.position 】
+/// @param aVertexAttribute 别一顶点
+- (BOOL)isSameTo:(QJVertexAttribute *)aVertexAttribute ;
+
 @end
 
 

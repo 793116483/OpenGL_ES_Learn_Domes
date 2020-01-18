@@ -27,4 +27,17 @@
     return vertexAttibute ;
 }
 
+-(BOOL)isSameTo:(QJVertexAttribute *)aVertexAttribute {
+    if (aVertexAttribute == nil) return NO ;
+    if (self == aVertexAttribute) return YES ;
+    
+    if (self.position.x != aVertexAttribute.position.x ||
+        self.position.y != aVertexAttribute.position.y ||
+        self.position.z != aVertexAttribute.position.z) {
+        return NO ;
+    }
+    
+    return YES ;
+}
+
 @end
