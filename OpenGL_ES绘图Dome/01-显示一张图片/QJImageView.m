@@ -100,9 +100,26 @@
          
             【图片纹理坐标】 ：后面两个是 图片纹理坐标（x，y），以需要绘制的图片 左下角为原点
      */
-    GLfloat squareVertexAttributes[self.triaglesAttributeArray.count * 3 * 9 ] ;
+    NSMutableArray * usedTriaglesArray = [NSMutableArray arrayWithCapacity:triaglesArray.count];
+    GLfloat squareVertexAttributes[triaglesArray.count * 3 * 9 ] ;
     GLuint n = 0 ;
-    for (QJDrawTrianglesModel * trianglesModel in triaglesArray) {
+    for (QJDrawTrianglesModel * trianglesModel in triaglesArray.reverseObjectEnumerator) {
+        
+        // 过滤1：不是三角形 则直接下一个
+        if (![trianglesModel isTriangles]) {
+            continue ;
+        }
+        // 过滤2：判断 trianglesModel 三角形是否被使用过，说明不用重复画，影响性能
+        BOOL isUsed = NO ;
+        for (QJDrawTrianglesModel * usedTriangles  in usedTriaglesArray) {
+            if ([usedTriangles isSameTo:trianglesModel]) {
+                isUsed = YES ;
+                break ;
+            }
+        }
+        if (isUsed == YES) continue ;
+        [usedTriaglesArray addObject:trianglesModel];
+        
         
         // 三角形模型
         NSArray<QJVertexAttribute *> * vertexAttArray = [trianglesModel vertexArray];
